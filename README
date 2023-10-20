@@ -1,0 +1,48 @@
+# Run
+
+# 单机运行
+
+mkdir build
+cd build
+cmake ..
+make ser_cli
+# server
+../ser_cli.sh server
+# cli
+../ser_cli.sh 0
+
+# 分布式运行
+# in build directory 
+../sync.sh out
+../ser_cli.sh server
+# in every cli's home/usr : ./ser_cli.sh cli_id
+./run.sh 0 
+
+# 收集数据 in build directory 
+../sync.sh in
+# python3 ../collect.py #num_clients
+python3 ../collect.py 2/4/8
+
+
+# multi-nod
+# raddr (40-48)8位对应mr(connection),
+
+
+# cal_latency
+
+```shell
+# sync ser_cli.sh run.sh ser_cli
+../syncs.sh out num_server
+
+# server
+../ser_cli.sh server
+
+# client
+# run clients
+python3 ../run.py num_server
+# sync out.txt insert_lat*.txt search_lat*.txt
+../sync.sh in num_server cli_num coro_num
+# cal_latency
+python3 ../cal_lat.py [op_tye:insert/search] [num_server]
+
+```

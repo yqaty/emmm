@@ -1,0 +1,11 @@
+cal_utilization:
+cur_level:3
+cal_utilization:
+space_consumption:1113949192
+buc_meta_consumption:0
+dir_entry_consumption:224184320
+total_meta_consumption:0
+entry_total:111253376
+entry_cnt:97497191
+entry_utilization:0.876353
+space_utilization:0.700191
